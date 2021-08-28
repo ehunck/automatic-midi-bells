@@ -1,0 +1,4 @@
+{
+    "cortex-debug.JLinkGDBServerPath": "/opt/SEGGER/JLink/JLinkGDBServerCLExe",
+    "cortex-debug.armToolchainPath": "/home/ehunckler/gcc-arm-none-eabi-9-2020-q2-update/bin/"
+}
