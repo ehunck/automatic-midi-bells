@@ -17,7 +17,15 @@
 
 App::App() :
     _thread( osPriorityNormal, OS_STACK_SIZE, nullptr, "APP" ),
-    _usb(false, 0x0700, 0x0101, 0x0001)
+    _usb(false, 0x0700, 0x0101, 0x0001),
+    _c_note(D0),
+    _d_note(D1),
+    _e_note(D2),
+    _f_note(D3),
+    _g_note(D4),
+    _a_note(D5),
+    _b_note(D6),
+    _hi_c_note(D7)
 {
 
 }
@@ -50,28 +58,16 @@ void App::MIDICallback()
 
 void App::ParseMessage( MIDIMessage::MIDIMessageType type, int note, int velocity, int pressure )
 {
-    int key = note % OCTAVE;
     switch( type )
     {
         case MIDIMessage::NoteOffType:
-            SetNote( key, 0 );
+            SetNote( note, 0 );
             break;
         case MIDIMessage::NoteOnType:
-            SetNote( key, 1 );
+            SetNote( note, 1 );
             break;
         case MIDIMessage::AllNotesOffType:
-            SetNote( C, 0 );
-            SetNote( Cs, 0 );
-            SetNote( D, 0 );
-            SetNote( Ds, 0 );
-            SetNote( E, 0 );
-            SetNote( F, 0 );
-            SetNote( Fs, 0 );
-            SetNote( G, 0 );
-            SetNote( Gs, 0 );
-            SetNote( A, 0 );
-            SetNote( As, 0 );
-            SetNote( B, 0 );
+            ResetNotes();
             break;
         case MIDIMessage::ErrorType:
             break;
@@ -89,5 +85,63 @@ void App::ParseMessage( MIDIMessage::MIDIMessageType type, int note, int velocit
             break;
         case MIDIMessage::ResetAllControllersType:
             break;
+        default:
+            break;
     }
+}
+
+void App::SetNote( int note, int active )
+{
+    if( active )
+    {
+        int key = note % OCTAVE;
+        switch( key )
+        {
+            case C:
+                _c_note.Fire();
+                break;
+            case Cs:
+                break;
+            case D:
+                _d_note.Fire();
+                break;
+            case Ds:
+                break;
+            case E:
+                _e_note.Fire();
+                break;
+            case F:
+                _f_note.Fire();
+                break;
+            case Fs:
+                break;
+            case G:
+                _g_note.Fire();
+                break;
+            case Gs:
+                break;
+            case A:
+                _a_note.Fire();
+                break;
+            case As:
+                break;
+            case B:
+                _b_note.Fire();
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+void App::ResetNotes()
+{
+    _c_note.Reset();
+    _d_note.Reset();
+    _e_note.Reset();
+    _f_note.Reset();
+    _g_note.Reset();
+    _a_note.Reset();
+    _b_note.Reset();
+    _hi_c_note.Reset();
 }
