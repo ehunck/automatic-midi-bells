@@ -7,11 +7,11 @@
         {
             "name": "Cortex Debug",
             "cwd": "${workspaceRoot}",
-            "executable": "BUILD/NUCLEO_F767ZI/GCC_ARM/christmasband-firmware.elf",
+            "executable": "BUILD/NUCLEO_F429ZI/GCC_ARM/christmasband-firmware.elf",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "jlink",
-            "device": "STM32F767ZI",
+            "device": "STM32F429ZI",
             "runToMain": true
         }
     ]
