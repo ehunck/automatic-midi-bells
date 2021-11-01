@@ -1,0 +1,7 @@
+{
+    "target_overrides": {
+        "*": {
+            "rtos.idle-thread-stack-size" : 1024
+        }
+    }
+}

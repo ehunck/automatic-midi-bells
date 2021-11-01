@@ -8,20 +8,20 @@
 class App 
 {
 public:
-    App();
+    App(EventQueue& queue);
     void Init();
 
 protected:
-    void ThreadFunction();
 
+    void HeartBeat();
     void MIDICallback();
     void ParseMessage( MIDIMessage::MIDIMessageType type, int note, int velocity, int pressure );
     void SetNote( int note, int active );
     void ResetNotes();
-    Thread _thread;
-    EventQueue _queue;
 
-    USBMIDI _usb;
+    EventQueue& _queue;
+
+    // USBMIDI _usb;
 
     BellDriver _c_note;
     BellDriver _d_note;
@@ -31,6 +31,8 @@ protected:
     BellDriver _a_note;
     BellDriver _b_note;
     BellDriver _hi_c_note;
+
+    DigitalOut _led1;
 };
 
 #endif // _APP_H_
