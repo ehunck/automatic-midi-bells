@@ -21,7 +21,7 @@ protected:
 
     EventQueue& _queue;
 
-    // USBMIDI _usb;
+    USBMIDI _usb;
 
     BellDriver _c_note;
     BellDriver _d_note;

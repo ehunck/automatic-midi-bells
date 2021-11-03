@@ -9,17 +9,12 @@ public:
     BellDriver(PinName pin);
     virtual ~BellDriver();
 
-    void SetPulseWidth( int32_t pulse_time_ms );
-    uint32_t GetPulseWidth();
-
     void Fire();
     void Reset();
 
 protected:
     DigitalOut _solenoid;
     Timeout _timeout;
-
-    uint32_t _pulse_width_ms;
 
 };
 

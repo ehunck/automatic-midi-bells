@@ -1,3 +1,4 @@
 ROOT=.
 TARGET=NUCLEO_F429ZI
 TOOLCHAIN=GCC_ARM
+GCC_ARM_PATH=/Applications/gcc-arm-none-eabi-10.3-2021.10/bin

@@ -16,7 +16,7 @@
 #define OCTAVE 12
 
 App::App(EventQueue& queue) :
-    // _usb(false, 0x0700, 0x0101, 0x0001),
+    _usb(false, 0x0700, 0x0101, 0x0001),
     _c_note(D0),
     _d_note(D1),
     _e_note(D2),
@@ -33,30 +33,32 @@ App::App(EventQueue& queue) :
 
 void App::Init()
 {
-    // _usb.attach( callback(this, &App::MIDICallback) );
+    _usb.attach( callback(this, &App::MIDICallback) );
 
-    _queue.call_every( 1000ms, callback(this, &App::HeartBeat));
+    _queue.call_every( 1s, callback(this, &App::HeartBeat));
 }
 
 void App::HeartBeat()
 {
- 
     _led1 = !_led1;
-    static int note = 0;
-    SetNote( note++, 1 );
+
+    // if( !_usb.configured() )
+    // {
+    //     _usb.connect();
+    // }
 }
 
 void App::MIDICallback()
 {
-    // if( _usb.readable() )
-    // {
-    //     MIDIMessage message;
-    //     if( _usb.read( &message ) )
-    //     {
-    //         _queue.call( callback(this, &App::ParseMessage), 
-    //             message.type(), message.key(), message.velocity(), message.pressure() );
-    //     }
-    // }
+    if( _usb.readable() )
+    {
+        MIDIMessage message;
+        if( _usb.read( &message ) )
+        {
+            _queue.call( callback(this, &App::ParseMessage), 
+                message.type(), message.key(), message.velocity(), message.pressure() );
+        }
+    }
 }
 
 void App::ParseMessage( MIDIMessage::MIDIMessageType type, int note, int velocity, int pressure )
