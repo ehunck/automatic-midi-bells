@@ -15,6 +15,7 @@ protected:
 
     void HeartBeat();
     void MIDICallback();
+    void RetrieveMessage();
     void ParseMessage( MIDIMessage::MIDIMessageType type, int note, int velocity, int pressure );
     void SetNote( int note, int active );
     void ResetNotes();

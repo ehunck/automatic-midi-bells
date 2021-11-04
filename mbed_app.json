@@ -3,6 +3,7 @@
         "*": {
             "rtos.idle-thread-stack-size" : 1024,
             "rtos.timer-thread-stack-size" : 1024,
+            "rtos.main-thread-stack-size" : 16384,
             "target.printf_lib": "minimal-printf",
             "platform.minimal-printf-enable-floating-point": false,
             "platform.stdio-baud-rate"          : 115200

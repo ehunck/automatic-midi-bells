@@ -5,6 +5,7 @@
         "ios": "cpp",
         "mstd_atomic": "cpp",
         "locale": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "istream": "cpp"
     }
 }

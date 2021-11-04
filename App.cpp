@@ -41,22 +41,24 @@ void App::Init()
 void App::HeartBeat()
 {
     _led1 = !_led1;
-
-    // if( !_usb.configured() )
-    // {
-    //     _usb.connect();
-    // }
 }
 
 void App::MIDICallback()
 {
-    if( _usb.readable() )
+    _queue.call( callback(this, &App::RetrieveMessage));
+}
+
+void App::RetrieveMessage()
+{
+    if( _usb.configured() )
     {
-        MIDIMessage message;
-        if( _usb.read( &message ) )
+        if( _usb.readable() )
         {
-            _queue.call( callback(this, &App::ParseMessage), 
-                message.type(), message.key(), message.velocity(), message.pressure() );
+            MIDIMessage message;
+            if( _usb.read( &message ) )
+            {
+                this->ParseMessage( message.type(), message.key(), message.velocity(), message.pressure() );
+            }
         }
     }
 }
@@ -75,22 +77,15 @@ void App::ParseMessage( MIDIMessage::MIDIMessageType type, int note, int velocit
             ResetNotes();
             break;
         case MIDIMessage::ErrorType:
-            break;
         case MIDIMessage::SysExType:
-            break;
         case MIDIMessage::PolyphonicAftertouchType:
-            break;
         case MIDIMessage::ControlChangeType:
-            break;
         case MIDIMessage::ProgramChangeType:
-            break;
         case MIDIMessage::ChannelAftertouchType:
-            break;
         case MIDIMessage::PitchWheelType:
-            break;
         case MIDIMessage::ResetAllControllersType:
-            break;
         default:
+            _hi_c_note.Fire();
             break;
     }
 }

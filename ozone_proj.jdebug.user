@@ -1,19 +1,29 @@
 
-OpenDocument="stm32f4xx_hal_pwr.c", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/targets/TARGET_STM/TARGET_STM32F4/STM32Cube_FW/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.c", Line=386
-OpenDocument="gpio_object.h", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/targets/TARGET_STM/gpio_object.h", Line=38
+
+Breakpoint=/Users/eddiehunckler/Projects/christmasband-firmware/App.cpp:88, State=BP_STATE_ON
+OpenDocument="system_stm32f4xx.c", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/targets/TARGET_STM/TARGET_STM32F4/STM32Cube_FW/system_stm32f4xx.c", Line=249
+OpenDocument="App.cpp", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/App.cpp", Line=59
+OpenDocument="EventQueue.h", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/events/include/events/EventQueue.h", Line=976
 OpenDocument="main.cpp", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/main.cpp", Line=0
+OpenDocument="USBDevice.cpp", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/drivers/usb/source/USBDevice.cpp", Line=725
+OpenDocument="USBMIDI.cpp", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/drivers/usb/source/USBMIDI.cpp", Line=170
+OpenDocument="new", FilePath="/Applications/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/10.3.1/new", Line=166
+OpenDocument="Callback.h", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/platform/include/platform/Callback.h", Line=594
+OpenDocument="stm32f4xx_hal_pwr.c", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/targets/TARGET_STM/TARGET_STM32F4/STM32Cube_FW/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.c", Line=386
+OpenDocument="gpio_object.h", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/targets/TARGET_STM/gpio_object.h", Line=63
+OpenDocument="equeue.c", FilePath="/Users/eddiehunckler/Projects/christmasband-firmware/mbed-os/events/source/equeue.c", Line=394
 OpenToolbar="Debug", Floating=0, x=0, y=0
-OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=468, h=181, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
-OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=468, h=189, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=187, h=179, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=187, h=185, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Memory 1", DockArea=BOTTOM, x=1, y=0, w=654, h=315, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, EditorAddress=0x0
-OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=325, h=181, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Call Graph", DockArea=LEFT, x=0, y=1, w=325, h=121, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Memory Usage", DockArea=LEFT, x=0, y=2, w=325, h=188, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Find Results", DockArea=RIGHT, x=0, y=1, w=468, h=120, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=325, h=178, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Call Graph", DockArea=LEFT, x=0, y=1, w=325, h=128, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Memory Usage", DockArea=LEFT, x=0, y=2, w=325, h=184, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Find Results", DockArea=RIGHT, x=0, y=1, w=187, h=126, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=668, h=315, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Class";"Source"], ColWidths=[2118;100;100;100;302;728]
 TableHeader="Call Graph", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Stack Total";"Stack Local";"Code Total";"Code Local";"Depth";"Called From"], ColWidths=[2004;100;100;100;100;119;100]
 TableHeader="Power Sampling", SortCol="Index", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
-TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[100;105;248]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[100;105;224]
 TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
 TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[200;100;100;777]
