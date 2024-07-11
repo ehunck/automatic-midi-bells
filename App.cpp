@@ -14,6 +14,8 @@
 #define B  11
 
 #define OCTAVE 12
+#define OCTAVE_OFFSET	60
+
 
 App::App(EventQueue& queue) :
     _usb(false, 0x0700, 0x0101, 0x0001),
@@ -33,6 +35,8 @@ App::App(EventQueue& queue) :
 
 void App::Init()
 {
+	_usb.init();
+	_usb.connect();
     _usb.attach( callback(this, &App::MIDICallback) );
 
     _queue.call_every( 1s, callback(this, &App::HeartBeat));
@@ -52,7 +56,7 @@ void App::RetrieveMessage()
 {
     if( _usb.configured() )
     {
-        if( _usb.readable() )
+        while( _usb.readable() )
         {
             MIDIMessage message;
             if( _usb.read( &message ) )
@@ -94,7 +98,7 @@ void App::SetNote( int note, int active )
 {
     if( active )
     {
-        int key = note % OCTAVE;
+        int key = note - OCTAVE_OFFSET;
         switch( key )
         {
             case C:
@@ -128,8 +132,50 @@ void App::SetNote( int note, int active )
             case B:
                 _b_note.Fire();
                 break;
+            case (C+OCTAVE):
+				_hi_c_note.Fire();
+            	break;
             default:
-                break;
+            {
+            	// wrap missing keys back into the playable seciton.
+            	switch( note % OCTAVE )
+            	{
+					case C:
+						_c_note.Fire();
+						break;
+					case Cs:
+						break;
+					case D:
+						_d_note.Fire();
+						break;
+					case Ds:
+						break;
+					case E:
+						_e_note.Fire();
+						break;
+					case F:
+						_f_note.Fire();
+						break;
+					case Fs:
+						break;
+					case G:
+						_g_note.Fire();
+						break;
+					case Gs:
+						break;
+					case A:
+						_a_note.Fire();
+						break;
+					case As:
+						break;
+					case B:
+						_b_note.Fire();
+						break;
+					default:
+						break;
+            	}
+            	break;
+            }
         }
     }
 }

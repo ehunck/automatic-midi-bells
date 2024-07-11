@@ -1,6 +1,6 @@
 #include "BellDriver.h"
 
-#define DEFAULT_PULSE_WIDTH_MS 20ms
+#define DEFAULT_PULSE_WIDTH_MS 40ms
 
 BellDriver::BellDriver(PinName pin):
     _solenoid(pin, 0)
