@@ -17,7 +17,7 @@ To strike each bell, I settled on using a simple solution of using a solenoid fi
 
 After writing the software, tuning the timing of the pulses for the solenoids, 3D printing the holders, wiring up the bells, and placing in an enclosure, the system was ready for some testing. The below video is of the bells palying the song “Imagine”. Listen carefully and you can make out the tune!
 
-![video](docs/example.mov)
+![video](https://youtu.be/uVdHXmNSFV0)
 
 Musical bells playing “Imagine”.
 
